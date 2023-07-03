@@ -2,15 +2,12 @@
 #include <stdio.h>
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
-  BreachType brchType;
+  BreachType brchType = NORMAL;
   if(value < lowerLimit) {
     brchType = TOO_LOW;
   }
   else if(value > upperLimit) {
     brchType = TOO_HIGH;
-  }
-  else {
-    brchType = NORMAL;
   }
   return brchType;
 }
