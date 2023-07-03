@@ -2,13 +2,17 @@
 #include <stdio.h>
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
+  BreachType brchType;
   if(value < lowerLimit) {
-    return TOO_LOW;
+    brchType = TOO_LOW;
   }
-  if(value > upperLimit) {
-    return TOO_HIGH;
+  else if(value > upperLimit) {
+    brchType = TOO_HIGH;
   }
-  return NORMAL;
+  else {
+    brchType = NORMAL;
+  }
+  return brchType;
 }
 
 BreachType classifyTemperatureBreach(
