@@ -1,7 +1,7 @@
 # Refactoring legacy code
 
 Legacy code can be complex. It often starts simple, but collects complexity as the product and its customers evolve.
-_e
+
 This repository has legacy code in it. Let's refactor to enable evolution without adding complexity.
 
 ## About this repository
