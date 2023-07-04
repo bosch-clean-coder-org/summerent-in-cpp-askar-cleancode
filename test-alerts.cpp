@@ -23,3 +23,19 @@ TEST_CASE("classifyTemperatureBreach according to limits too Low") {
   REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, -1) == TOO_LOW);
 }
 
+
+TEST_CASE("checkAndAlert to controller according to limits too high") {
+  BatteryCharacter batteryChar = {PASSIVE_COOLING, "bosch"};
+  REQUIRE(checkAndAlert(TO_CONTROLLER, batteryChar, 50) == TOO_HIGH);
+}
+
+TEST_CASE("checkAndAlert to mail according to limits too low") {
+  BatteryCharacter batteryChar = {HI_ACTIVE_COOLING, "bosch"};
+  REQUIRE(checkAndAlert(TO_MAIL, batteryChar, -1) == TOO_LOW);
+}
+
+TEST_CASE("checkAndAlert to controller according to limits Normal") {
+  BatteryCharacter batteryChar = {MED_ACTIVE_COOLING, "bosch"};
+  REQUIRE(checkAndAlert(TO_MAIL, batteryChar, 20) == NORMAL);
+}
+
