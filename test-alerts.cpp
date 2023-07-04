@@ -6,3 +6,11 @@
 TEST_CASE("infers the breach according to limits") {
   REQUIRE(inferBreach(12, 20, 30) == TOO_LOW);
 }
+
+TEST_CASE("infers the breach according to limits high") {
+  REQUIRE(inferBreach(35, 20, 30) == TOO_HIGH);
+}
+
+TEST_CASE("infers the breach according to limits") {
+  REQUIRE(inferBreach(25, 20, 30) == NORMAL);
+}
