@@ -15,7 +15,7 @@ BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
 BreachType classifyTemperatureBreach(
     CoolingType coolingType, double temperatureInC) {
   int lowerLimit = 0;
-  int upperLimit = 0;
+  // int upperLimit = 0;
   int upperLimitarray[3] = {35,45,40};
   // switch(coolingType) {
   //   case PASSIVE_COOLING:
@@ -75,4 +75,5 @@ void sendToEmail(BreachType breachType) {
   else if (breachType == TOO_HIGH){
     printf("To: %s\n", recepient);
     printf("Hi, the temperature is too high\n");
+  }
 }
