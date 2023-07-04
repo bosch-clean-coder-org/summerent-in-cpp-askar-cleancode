@@ -14,3 +14,12 @@ TEST_CASE("infers the breach according to limits high") {
 TEST_CASE("infers the breach according to limits Normal") {
   REQUIRE(inferBreach(25, 20, 30) == NORMAL);
 }
+
+TEST_CASE("classifyTemperatureBreach according to limits too high") {
+  REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, 50) == TOO_HIGH);
+}
+
+TEST_CASE("classifyTemperatureBreach according to limits too Low") {
+  REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, -1) == TOO_LOW);
+}
+
