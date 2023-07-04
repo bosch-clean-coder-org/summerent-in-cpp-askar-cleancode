@@ -23,7 +23,7 @@ TEST_CASE("classifyTemperatureBreach according to limits too Low") {
   REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, -1) == TOO_LOW);
 }
 
-TEST_CASE("classifyTemperatureBreach according to limits too high") {
+TEST_CASE("classifyTemperatureBreach according to limits too normal") {
   REQUIRE(classifyTemperatureBreach(HI_ACTIVE_COOLING, 42) == NORMAL);
 }
 
